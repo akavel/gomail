@@ -1,3 +1,5 @@
+## NOTE: This is a fork of http://gopkg.in/gomail.v1, with custom tweaks and fixes
+
 # Gomail
 
 ## Introduction
@@ -23,12 +25,12 @@ It requires Go 1.3 or newer.
 
 ## Documentation
 
-https://godoc.org/gopkg.in/gomail.v1
+https://godoc.org/github.com/akavel/gomail
 
 
 ## Download
 
-    go get gopkg.in/gomail.v1
+    go get github.com/akavel/gomail
 
 
 ## Example
@@ -37,7 +39,7 @@ https://godoc.org/gopkg.in/gomail.v1
 package main
 
 import (
-	"gopkg.in/gomail.v1"
+	"github.com/akavel/gomail"
 )
 
 func main() {
@@ -84,4 +86,4 @@ bug or need a new feature.
 
 You can also ask questions on the [Gomail
 thread](https://groups.google.com/d/topic/golang-nuts/ywPpNlmSt6U/discussion)
-in the Go mailing-list or via Twitter [@alexandrecesaro](https://twitter.com/alexandrecesaro).
+in the Go mailing-list.
