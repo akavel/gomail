@@ -215,7 +215,7 @@ func testSendMail(t *testing.T, addr string, config *tls.Config, want []string) 
 	}
 
 	mailer := NewCustomMailer(addr, testAuth, settings...)
-	if err := mailer.Send(msg); err != nil {
+	if err := mailer.Send(msg.Export()); err != nil {
 		t.Error(err)
 	}
 }

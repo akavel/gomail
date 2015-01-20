@@ -90,9 +90,7 @@ func NewCustomMailer(addr string, auth smtp.Auth, settings ...MailerSetting) *Ma
 }
 
 // Send sends the emails to all the recipients of the message.
-func (m *Mailer) Send(msg *Message) error {
-	message := msg.Export()
-
+func (m *Mailer) Send(message *mail.Message) error {
 	from, err := getFrom(message)
 	if err != nil {
 		return err

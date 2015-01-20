@@ -484,7 +484,7 @@ func testMessage(t *testing.T, msg *Message, bCount int, emails ...message) {
 	now = stubNow
 	mailer := NewMailer("host", "username", "password", 587, SetSendMail(stubSendMail(t, bCount, emails...)))
 
-	err := mailer.Send(msg)
+	err := mailer.Send(msg.Export())
 	if err != nil {
 		t.Error(err)
 	}
@@ -625,7 +625,7 @@ func BenchmarkFull(b *testing.B) {
 		msg.Embed(CreateFile("benchmark.jpg", []byte("Benchmark")))
 
 		mailer := NewMailer("host", "username", "password", 587, SetSendMail(emptyFunc))
-		if err := mailer.Send(msg); err != nil {
+		if err := mailer.Send(msg.Export()); err != nil {
 			panic(err)
 		}
 	}

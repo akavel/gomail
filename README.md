@@ -58,7 +58,7 @@ func main() {
 
 	// Send the email to Bob, Cora and Dan
 	mailer := gomail.NewMailer("smtp.example.com", "user", "123456", 587)
-	if err := mailer.Send(msg); err != nil {
+	if err := mailer.Send(msg.Export()); err != nil {
 		panic(err)
 	}
 }
